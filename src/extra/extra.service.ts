@@ -15,7 +15,7 @@ export class ExtraService {
     }
   }
 
-  async ipInfo(ip: string) {
+  async getIpInfo(ip: string) {
     try {
       return (await axios.get(getUrl('ip') + `q=${ip}` + this.apiKey)).data;
     } catch (error) {
@@ -23,7 +23,7 @@ export class ExtraService {
     }
   }
 
-  async locationsTimezone(location: string) {
+  async getLocationTimezone(location: string) {
     try {
       return (
         await axios.get(getUrl('timezone') + `q=${location}` + this.apiKey)
@@ -33,7 +33,7 @@ export class ExtraService {
     }
   }
 
-  async astronomyLocation(location: string, date: string) {
+  async getAstronomyLocation(location: string, date: string) {
     try {
       return (
         await axios.get(
